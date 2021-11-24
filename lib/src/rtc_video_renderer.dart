@@ -43,6 +43,8 @@ class RTCVideoValue {
 abstract class VideoRenderer {
   VideoRenderer();
 
+  /// When the video size changes, or the native texture
+  /// changes (angle or size), notify the user to redraw the Widget.
   Function? onResize;
 
   int get videoWidth;
