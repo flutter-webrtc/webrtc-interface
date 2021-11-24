@@ -1,7 +1,5 @@
 import 'media_stream_track.dart';
 
-typedef MediaTrackCallback = void Function(MediaStreamTrack track);
-
 ///https://w3c.github.io/mediacapture-main/#mediastream
 abstract class MediaStream {
   MediaStream(this._id, this._ownerTag);
@@ -9,10 +7,10 @@ abstract class MediaStream {
   final String _ownerTag;
 
   /// The event type of this event handler is addtrack.
-  MediaTrackCallback? onAddTrack;
+  Function(MediaStreamTrack track)? onAddTrack;
 
   /// The event type of this event handler is removetrack.
-  MediaTrackCallback? onRemoveTrack;
+  Function(MediaStreamTrack track)? onRemoveTrack;
 
   String get id => _id;
 

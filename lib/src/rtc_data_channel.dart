@@ -61,16 +61,11 @@ class RTCDataChannelMessage {
   Uint8List get binary => _data;
 }
 
-typedef RTCDataChannelStateCallback = void Function(RTCDataChannelState state);
-
-typedef RTCDataChannelOnMessageCallback = void Function(
-    RTCDataChannelMessage data);
-
 abstract class RTCDataChannel {
   RTCDataChannel();
 
-  RTCDataChannelStateCallback? onDataChannelState;
-  RTCDataChannelOnMessageCallback? onMessage;
+  Function(RTCDataChannelState state)? onDataChannelState;
+  Function(RTCDataChannelMessage data)? onMessage;
 
   /// Get current state.
   RTCDataChannelState? get state;

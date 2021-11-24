@@ -13,42 +13,24 @@ import 'rtc_session_description.dart';
 import 'rtc_stats_report.dart';
 import 'rtc_track_event.dart';
 
-typedef SignalingStateCallback = void Function(RTCSignalingState state);
-typedef PeerConnectionStateCallback = void Function(
-    RTCPeerConnectionState state);
-typedef IceGatheringStateCallback = void Function(RTCIceGatheringState state);
-typedef IceConnectionStateCallback = void Function(RTCIceConnectionState state);
-typedef IceCandidateCallback = void Function(RTCIceCandidate candidate);
-typedef AddStreamCallback = void Function(MediaStream stream);
-typedef RemoveStreamCallback = void Function(MediaStream stream);
-typedef AddTrackCallback = void Function(
-    MediaStream stream, MediaStreamTrack track);
-typedef RemoveTrackCallback = void Function(
-    MediaStream stream, MediaStreamTrack track);
-typedef RTCDataChannelCallback = void Function(RTCDataChannel channel);
-typedef RenegotiationNeededCallback = void Function();
-
-/// Unified-Plan
-typedef UnifiedPlanTrackCallback = void Function(RTCTrackEvent event);
-
 abstract class RTCPeerConnection {
   RTCPeerConnection();
 
   // public: delegate
-  SignalingStateCallback? onSignalingState;
-  PeerConnectionStateCallback? onConnectionState;
-  IceGatheringStateCallback? onIceGatheringState;
-  IceConnectionStateCallback? onIceConnectionState;
-  IceCandidateCallback? onIceCandidate;
-  AddStreamCallback? onAddStream;
-  RemoveStreamCallback? onRemoveStream;
-  AddTrackCallback? onAddTrack;
-  RemoveTrackCallback? onRemoveTrack;
-  RTCDataChannelCallback? onDataChannel;
-  RenegotiationNeededCallback? onRenegotiationNeeded;
+  Function(RTCSignalingState state)? onSignalingState;
+  Function(RTCPeerConnectionState state)? onConnectionState;
+  Function(RTCIceGatheringState state)? onIceGatheringState;
+  Function(RTCIceConnectionState state)? onIceConnectionState;
+  Function(RTCIceCandidate candidate)? onIceCandidate;
+  Function(MediaStream stream)? onAddStream;
+  Function(MediaStream stream)? onRemoveStream;
+  Function(MediaStream stream, MediaStreamTrack track)? onAddTrack;
+  Function(MediaStream stream, MediaStreamTrack track)? onRemoveTrack;
+  Function(RTCDataChannel channel)? onDataChannel;
+  Function()? onRenegotiationNeeded;
 
   /// Unified-Plan
-  UnifiedPlanTrackCallback? onTrack;
+  Function(RTCTrackEvent event)? onTrack;
 
   RTCSignalingState? get signalingState;
 
