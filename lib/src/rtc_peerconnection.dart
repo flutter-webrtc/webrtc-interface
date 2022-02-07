@@ -74,6 +74,8 @@ abstract class RTCPeerConnection {
   Future<RTCDataChannel> createDataChannel(
       String label, RTCDataChannelInit dataChannelDict);
 
+  Future<void> restartIce();
+
   Future<void> close();
 
   RTCDTMFSender createDtmfSender(MediaStreamTrack track);
