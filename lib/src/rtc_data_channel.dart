@@ -76,6 +76,8 @@ abstract class RTCDataChannel {
   /// Get channel label
   String? get label;
 
+  int? get bufferedAmount;
+
   /// Stream of state change events. Emits the new state on change.
   /// Closes when the [RTCDataChannel] is closed.
   late Stream<RTCDataChannelState> stateChangeStream;
