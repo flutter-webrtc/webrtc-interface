@@ -71,7 +71,7 @@ abstract class RTCDataChannel {
   RTCDataChannelState? get state;
 
   /// Get channel id
-  String? get id;
+  int? get id;
 
   /// Get channel label
   String? get label;
