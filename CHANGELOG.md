@@ -1,6 +1,10 @@
 # Changelog
 
 --------------------------------------------
+[1.0.4] - 2022-05-08
+
+* Change to nullable track for replaceTrack/setTrack.
+
 [1.0.3] - 2022-03-31
 
 * Added RTCDataChannel.id
