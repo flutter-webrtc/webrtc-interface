@@ -1,6 +1,10 @@
 # Changelog
 
 --------------------------------------------
+[1.0.5] - 2022-05-31
+
+* Added Function(int currentAmount, int changedAmount)? onBufferedAmountChange callback.
+
 [1.0.4] - 2022-05-08
 
 * Change to nullable track for replaceTrack/setTrack.
