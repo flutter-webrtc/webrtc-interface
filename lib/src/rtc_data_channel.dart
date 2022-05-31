@@ -66,6 +66,7 @@ abstract class RTCDataChannel {
 
   Function(RTCDataChannelState state)? onDataChannelState;
   Function(RTCDataChannelMessage data)? onMessage;
+  Function(int currentAmount, int changedAmount)? onBufferedAmountChange;
 
   /// Get current state.
   RTCDataChannelState? get state;
