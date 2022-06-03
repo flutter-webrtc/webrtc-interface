@@ -1,6 +1,11 @@
 # Changelog
 
 --------------------------------------------
+[1.0.5] - 2022-05-31
+
+* Added Function(int currentAmount, int changedAmount)? onBufferedAmountChange callback (bufferedAmount should be set to non nullable after bufferedAmount implementation on all platforms).
+* Added Function(int currentAmount)? onBufferedAmountLow callback and bufferedAmountLowThreshold variable.
+
 [1.0.4] - 2022-05-08
 
 * Change to nullable track for replaceTrack/setTrack.

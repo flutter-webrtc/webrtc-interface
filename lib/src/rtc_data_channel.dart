@@ -66,6 +66,8 @@ abstract class RTCDataChannel {
 
   Function(RTCDataChannelState state)? onDataChannelState;
   Function(RTCDataChannelMessage data)? onMessage;
+  Function(int currentAmount, int changedAmount)? onBufferedAmountChange;
+  Function(int currentAmount)? onBufferedAmountLow;
 
   /// Get current state.
   RTCDataChannelState? get state;
@@ -77,6 +79,9 @@ abstract class RTCDataChannel {
   String? get label;
 
   int? get bufferedAmount;
+
+  /// Set threshold to trigger onBufferedAmountLow callback
+  int? bufferedAmountLowThreshold;
 
   /// Stream of state change events. Emits the new state on change.
   /// Closes when the [RTCDataChannel] is closed.
