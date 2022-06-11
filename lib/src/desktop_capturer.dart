@@ -5,10 +5,23 @@ enum SourceType {
   kWindow,
 }
 
+final desktopSourceTypeToString = <SourceType, String>{
+  SourceType.kScreen: 'screen',
+  SourceType.kWindow: 'window',
+};
+
+final tringToDesktopSourceType = <String, SourceType>{
+  'screen': SourceType.kScreen,
+  'window': SourceType.kWindow,
+};
+
 class ThumbnailSize {
   ThumbnailSize(this.width, this.height);
   int width;
   int height;
+  factory ThumbnailSize.fromMap(Map<dynamic, dynamic> map) {
+    return ThumbnailSize(map['width'], map['height']);
+  }
 }
 
 abstract class DesktopCapturerSource {
@@ -21,7 +34,7 @@ abstract class DesktopCapturerSource {
   String get name;
 
   ///A thumbnail image of the source. ARGB
-  ByteBuffer get thumbnail;
+  Uint8List? get thumbnail;
 
   /// specified in the options passed to desktopCapturer.getSources.
   /// The actual size depends on the scale of the screen or window.
@@ -33,5 +46,5 @@ abstract class DesktopCapturerSource {
 
 abstract class DesktopCapturer {
   Future<List<DesktopCapturerSource>> getSources(
-      {List<SourceType> types, ThumbnailSize thumbnailSize});
+      {required List<SourceType> types, ThumbnailSize? thumbnailSize});
 }
