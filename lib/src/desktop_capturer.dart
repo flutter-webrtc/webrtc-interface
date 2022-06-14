@@ -17,11 +17,11 @@ final tringToDesktopSourceType = <String, SourceType>{
 
 class ThumbnailSize {
   ThumbnailSize(this.width, this.height);
-  int width;
-  int height;
   factory ThumbnailSize.fromMap(Map<dynamic, dynamic> map) {
     return ThumbnailSize(map['width'], map['height']);
   }
+  int width;
+  int height;
 }
 
 abstract class DesktopCapturerSource {
