@@ -114,6 +114,12 @@ abstract class MediaDevices {
   MediaTrackSupportedConstraints getSupportedConstraints() {
     throw UnimplementedError();
   }
+
+  /// A function you provide which accepts as input a Event object describing
+  /// the devicechange event that occurred. There is no information about the
+  /// change included in the event object; to get the updated list of devices,
+  /// you'll have to use enumerateDevices().
+  Function(dynamic event)? ondevicechange;
 }
 
 /// This describe the media input and output devices, such as microphones,
