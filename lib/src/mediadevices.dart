@@ -120,6 +120,9 @@ abstract class MediaDevices {
   /// change included in the event object; to get the updated list of devices,
   /// you'll have to use enumerateDevices().
   Function(dynamic event)? ondevicechange;
+
+  /// Prompts the user to select a specific audio output device.
+  Future<MediaDeviceInfo> selectAudioOutput([AudioOutputOptions? options]);
 }
 
 /// This describe the media input and output devices, such as microphones,
@@ -151,4 +154,14 @@ class MediaDeviceInfo {
   /// Returns a String that is a label describing this device
   /// (for example "External USB Webcam").
   final String label;
+}
+
+/// An object that configures what device(s) may be offered in the user prompt.
+class AudioOutputOptions {
+  AudioOutputOptions({
+    this.deviceId = "",
+  });
+
+  /// A string representing the id of the (only) device to display in the prompt (with default value: "").
+  final String deviceId;
 }
