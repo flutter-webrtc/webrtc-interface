@@ -1,6 +1,11 @@
 # Changelog
 
 --------------------------------------------
+[1.0.6] - 2022-08-04
+
+* Add selectAudioOutput method to MediaDevices.
+* Add ondevicechange property to MediaDevices.
+
 [1.0.5] - 2022-05-31
 
 * Added Function(int currentAmount, int changedAmount)? onBufferedAmountChange callback (bufferedAmount should be set to non nullable after bufferedAmount implementation on all platforms).

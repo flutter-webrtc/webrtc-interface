@@ -159,7 +159,7 @@ class MediaDeviceInfo {
 /// An object that configures what device(s) may be offered in the user prompt.
 class AudioOutputOptions {
   AudioOutputOptions({
-    this.deviceId = "",
+    this.deviceId = '',
   });
 
   /// A string representing the id of the (only) device to display in the prompt (with default value: "").

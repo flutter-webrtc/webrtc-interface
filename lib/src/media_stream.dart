@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'media_stream_track.dart';
 
 ///https://w3c.github.io/mediacapture-main/#mediastream
