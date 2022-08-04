@@ -1,6 +1,10 @@
 # Changelog
 
 --------------------------------------------
+[1.0.7] - 2022-08-04
+
+* Add stub for selectAudioOutput.
+
 [1.0.6] - 2022-08-04
 
 * Add selectAudioOutput method to MediaDevices.

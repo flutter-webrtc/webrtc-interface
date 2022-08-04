@@ -122,7 +122,8 @@ abstract class MediaDevices {
   Function(dynamic event)? ondevicechange;
 
   /// Prompts the user to select a specific audio output device.
-  Future<MediaDeviceInfo> selectAudioOutput([AudioOutputOptions? options]);
+  Future<MediaDeviceInfo> selectAudioOutput([AudioOutputOptions? options]) =>
+      throw UnimplementedError();
 }
 
 /// This describe the media input and output devices, such as microphones,
