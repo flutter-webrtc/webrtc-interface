@@ -47,6 +47,9 @@ abstract class VideoRenderer {
   /// changes (angle or size), notify the user to redraw the Widget.
   Function? onResize;
 
+  /// When the first frame is rendered, notify the user that video started playing.
+  Function? onFirstFrameRendered;
+
   int get videoWidth;
 
   int get videoHeight;
