@@ -49,6 +49,7 @@ enum RTCVideoViewObjectFit {
   RTCVideoViewObjectFitContain,
   RTCVideoViewObjectFitCover,
 }
+
 enum RTCRtpMediaType {
   RTCRtpMediaTypeAudio,
   RTCRtpMediaTypeVideo,
@@ -72,6 +73,7 @@ enum TransceiverDirection {
   SendOnly,
   RecvOnly,
   Inactive,
+  Stopped,
 }
 
 final typeStringToRtpTransceiverDirection = <String, TransceiverDirection>{
@@ -79,6 +81,7 @@ final typeStringToRtpTransceiverDirection = <String, TransceiverDirection>{
   'sendonly': TransceiverDirection.SendOnly,
   'recvonly': TransceiverDirection.RecvOnly,
   'inactive': TransceiverDirection.Inactive,
+  'stopped': TransceiverDirection.Stopped,
 };
 
 final typeRtpTransceiverDirectionToString = <TransceiverDirection, String>{
@@ -86,6 +89,7 @@ final typeRtpTransceiverDirectionToString = <TransceiverDirection, String>{
   TransceiverDirection.SendOnly: 'sendonly',
   TransceiverDirection.RecvOnly: 'recvonly',
   TransceiverDirection.Inactive: 'inactive',
+  TransceiverDirection.Stopped: 'stopped,'
 };
 
 RTCIceConnectionState iceConnectionStateForString(String? state) {
