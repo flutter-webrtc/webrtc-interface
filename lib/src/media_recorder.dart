@@ -16,6 +16,7 @@ abstract class MediaRecorder {
     MediaStream stream, {
     Function(dynamic blob, bool isLastOne)? onDataChunk,
     String mimeType,
+    int timeSlice = 1000,
   });
 
   Future<dynamic> stop();
