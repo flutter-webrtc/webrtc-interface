@@ -55,7 +55,7 @@ abstract class MediaStream {
   }
 
   /// Clones the given [MediaStream] and all its tracks.
-  MediaStream clone();
+  Future<MediaStream> clone();
 
   Future<void> dispose() async {
     return Future.value();
