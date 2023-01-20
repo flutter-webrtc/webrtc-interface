@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'enums.dart';
 import 'media_stream.dart';
+import 'rtc_rtp_capabilities.dart';
 import 'rtc_rtp_parameters.dart';
 import 'rtc_rtp_receiver.dart';
 import 'rtc_rtp_sender.dart';
@@ -29,6 +30,8 @@ abstract class RTCRtpTransceiver {
   Future<void> setDirection(TransceiverDirection direction);
 
   Future<TransceiverDirection> getDirection();
+
+  Future<void> setCodecPreferences(List<RTCRtpCodecCapability> codecs);
 
   String get mid;
 
