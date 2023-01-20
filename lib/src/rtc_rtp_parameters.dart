@@ -58,6 +58,7 @@ class RTCRtpEncoding {
     this.numTemporalLayers = 1,
     this.scaleResolutionDownBy = 1.0,
     this.ssrc,
+    this.scalabilityMode,
   });
 
   factory RTCRtpEncoding.fromMap(Map<dynamic, dynamic> map) => RTCRtpEncoding(
@@ -69,6 +70,7 @@ class RTCRtpEncoding {
         numTemporalLayers: map['numTemporalLayers'],
         scaleResolutionDownBy: map['scaleResolutionDownBy'],
         ssrc: map['ssrc'],
+        scalabilityMode: map['scalabilityMode'],
       );
 
   /// If non-null, this represents the RID that identifies this encoding layer.
@@ -101,6 +103,8 @@ class RTCRtpEncoding {
   /// Can't be changed between getParameters/setParameters.
   int? ssrc;
 
+  String? scalabilityMode;
+
   Map<String, dynamic> toMap() => {
         'active': active,
         if (rid != null) 'rid': rid,
@@ -110,6 +114,7 @@ class RTCRtpEncoding {
         if (numTemporalLayers != null) 'numTemporalLayers': numTemporalLayers,
         if (scaleResolutionDownBy != null)
           'scaleResolutionDownBy': scaleResolutionDownBy,
+        if (scalabilityMode != null) 'scalabilityMode': scalabilityMode,
         if (ssrc != null) 'ssrc': ssrc,
       };
 }
