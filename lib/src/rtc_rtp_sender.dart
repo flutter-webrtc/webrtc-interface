@@ -1,7 +1,5 @@
 import 'dart:async';
 
-import 'package:webrtc_interface/src/rtc_rtp_capabilities.dart';
-
 import 'media_stream_track.dart';
 import 'rtc_dtmf_sender.dart';
 import 'rtc_rtp_parameters.dart';
@@ -17,8 +15,6 @@ abstract class RTCRtpSender {
   Future<void> setTrack(MediaStreamTrack? track, {bool takeOwnership = true});
 
   Future<List<StatsReport>> getStats();
-
-  Future<RTCRtpCapabilities> getCapabilities();
 
   RTCRtpParameters get parameters;
 

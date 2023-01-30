@@ -2,6 +2,7 @@ import 'media_recorder.dart';
 import 'media_stream.dart';
 import 'navigator.dart';
 import 'rtc_peerconnection.dart';
+import 'rtc_rtp_capabilities.dart';
 import 'rtc_video_renderer.dart';
 
 abstract class RTCFactory {
@@ -10,6 +11,10 @@ abstract class RTCFactory {
       [Map<String, dynamic> constraints]);
 
   Future<MediaStream> createLocalMediaStream(String label);
+
+  Future<RTCRtpCapabilities> getRtpSenderCapabilities(String kind);
+
+  Future<RTCRtpCapabilities> getRtpReceiverCapabilities(String kind);
 
   MediaRecorder mediaRecorder();
 
