@@ -32,7 +32,7 @@ class RTCRtpHeaderExtensionCapability {
     return RTCRtpHeaderExtensionCapability(map['uri']);
   }
   String uri;
-  Map<String, dynamic> toMap() {
+  Map<dynamic, dynamic> toMap() {
     return {
       'uri': uri,
     };
