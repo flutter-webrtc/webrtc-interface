@@ -18,7 +18,7 @@ class RTCRtpCodecCapability {
   String? sdpFmtpLine;
   Map<String, dynamic> toMap() {
     return {
-      'channels': channels,
+      if (channels != null) 'channels': channels,
       'clockRate': clockRate,
       'mimeType': mimeType,
       if (sdpFmtpLine != null) 'sdpFmtpLine': sdpFmtpLine,
@@ -70,7 +70,7 @@ class RTCRtpCapabilities {
     return {
       'codecs': codecs?.map((e) => e.toMap()).toList(),
       'headerExtensions': headerExtensions?.map((e) => e.toMap()).toList(),
-      'fecMechanisms': fecMechanisms,
+      if (fecMechanisms != null) 'fecMechanisms': fecMechanisms,
     };
   }
 }
