@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'media_stream.dart';
 import 'media_stream_track.dart';
 import 'rtc_dtmf_sender.dart';
 import 'rtc_rtp_parameters.dart';
@@ -15,6 +16,8 @@ abstract class RTCRtpSender {
   Future<void> setTrack(MediaStreamTrack? track, {bool takeOwnership = true});
 
   Future<List<StatsReport>> getStats();
+
+  Future<void> setStreams(List<MediaStream> streams);
 
   RTCRtpParameters get parameters;
 
