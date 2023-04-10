@@ -1,6 +1,10 @@
 # Changelog
 
 --------------------------------------------
+[1.0.12] - 2023-04-10
+
+* Add addStreams to RTCRtpSender.
+
 [1.0.11] - 2023-01-30
 
 * Add RTCRtpCapabilities interface.
