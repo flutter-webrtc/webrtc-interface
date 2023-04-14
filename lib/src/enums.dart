@@ -176,3 +176,31 @@ RTCPeerConnectionState peerConnectionStateForString(String? state) {
 
   return RTCPeerConnectionState.RTCPeerConnectionStateClosed;
 }
+
+enum RTCDegradationPreference {
+  DISABLED,
+  MAINTAIN_FRAMERATE,
+  MAINTAIN_RESOLUTION,
+  BALANCED,
+}
+
+final typeRTCDegradationPreferenceString = <RTCDegradationPreference, String>{
+  RTCDegradationPreference.DISABLED: 'disabled',
+  RTCDegradationPreference.MAINTAIN_FRAMERATE: 'maintain-framerate',
+  RTCDegradationPreference.MAINTAIN_RESOLUTION: 'maintain-resolution',
+  RTCDegradationPreference.BALANCED: 'balanced',
+};
+
+RTCDegradationPreference degradationPreferenceforString(String? degradation) {
+  switch (degradation) {
+    case 'disabled':
+      return RTCDegradationPreference.DISABLED;
+    case 'maintain-framerate':
+      return RTCDegradationPreference.MAINTAIN_FRAMERATE;
+    case 'maintain-resolution':
+      return RTCDegradationPreference.MAINTAIN_RESOLUTION;
+    case 'balanced':
+      return RTCDegradationPreference.BALANCED;
+  }
+  return RTCDegradationPreference.BALANCED;
+}

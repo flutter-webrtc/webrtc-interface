@@ -1,3 +1,4 @@
+import 'enums.dart';
 import 'rtc_rtcp_parameters.dart';
 
 class RTCRTPCodec {
@@ -151,6 +152,7 @@ class RTCRtpParameters {
     this.headerExtensions,
     this.encodings,
     this.codecs,
+    this.degradationPreference,
   });
 
   factory RTCRtpParameters.fromMap(Map<dynamic, dynamic> map) {
@@ -169,12 +171,16 @@ class RTCRtpParameters {
     codecsMap.forEach((params) {
       codecs.add(RTCRTPCodec.fromMap(params));
     });
+
+    var degradationPreference = map['degradationPreference'];
     var rtcp = RTCRTCPParameters.fromMap(map['rtcp']);
     return RTCRtpParameters(
         transactionId: map['transactionId'],
         rtcp: rtcp,
         headerExtensions: headerExtensions,
         encodings: encodings,
+        degradationPreference:
+            degradationPreferenceforString(degradationPreference),
         codecs: codecs);
   }
 
@@ -185,6 +191,8 @@ class RTCRtpParameters {
   List<RTCHeaderExtension>? headerExtensions;
 
   List<RTCRtpEncoding>? encodings;
+
+  RTCDegradationPreference? degradationPreference;
 
   /// Codec parameters can't currently be changed between getParameters and
   /// setParameters. Though in the future it will be possible to reorder them or
@@ -210,6 +218,9 @@ class RTCRtpParameters {
       'headerExtensions': headerExtensionsList,
       'encodings': encodingList,
       'codecs': codecsList,
+      if (degradationPreference != null)
+        'degradationPreference':
+            typeRTCDegradationPreferenceString[degradationPreference!],
     };
   }
 }
