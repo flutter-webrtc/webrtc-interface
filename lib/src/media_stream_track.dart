@@ -90,6 +90,10 @@ abstract class MediaStreamTrack {
     throw UnimplementedError();
   }
 
+  void enableSpeakerphoneButPreferBluetooth() {
+    throw UnimplementedError();
+  }
+
   Future<ByteBuffer> captureFrame() {
     throw UnimplementedError();
   }
