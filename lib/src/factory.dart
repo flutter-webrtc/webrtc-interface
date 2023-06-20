@@ -1,3 +1,4 @@
+import 'frame_cryptor.dart';
 import 'media_recorder.dart';
 import 'media_stream.dart';
 import 'navigator.dart';
@@ -21,4 +22,6 @@ abstract class RTCFactory {
   VideoRenderer videoRenderer();
 
   Navigator get navigator;
+
+  FrameCryptorFactory get frameCryptorFactory;
 }
