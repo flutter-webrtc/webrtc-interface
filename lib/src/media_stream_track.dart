@@ -102,6 +102,10 @@ abstract class MediaStreamTrack {
     throw UnimplementedError();
   }
 
+  Future<void> setZoom(double zoomLevel) {
+    throw UnimplementedError();
+  }
+
   @Deprecated('use stop() instead')
   Future<void> dispose();
 
