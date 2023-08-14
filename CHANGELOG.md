@@ -1,6 +1,10 @@
 # Changelog
 
 --------------------------------------------
+[1.1.1] - 2023-08-14
+
+* Add more async methods.
+
 [1.1.0] - 2023-06-29
 
 * Add FrameCryptor interface.

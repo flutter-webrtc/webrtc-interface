@@ -66,7 +66,9 @@ abstract class MediaStreamTrack {
   //   throw UnimplementedError();
   // }
 
-  // MediaStreamTrack clone();
+  Future<MediaStreamTrack> clone() async {
+    throw UnimplementedError();
+  }
 
   Future<void> stop();
 

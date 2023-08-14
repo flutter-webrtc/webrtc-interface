@@ -34,11 +34,27 @@ abstract class RTCPeerConnection {
 
   RTCSignalingState? get signalingState;
 
+  Future<RTCSignalingState?> getSignalingState() async {
+    return signalingState;
+  }
+
   RTCIceGatheringState? get iceGatheringState;
+
+  Future<RTCIceGatheringState?> getIceGatheringState() async {
+    return iceGatheringState;
+  }
 
   RTCIceConnectionState? get iceConnectionState;
 
+  Future<RTCIceConnectionState?> getIceConnectionState() async {
+    return iceConnectionState;
+  }
+
   RTCPeerConnectionState? get connectionState;
+
+  Future<RTCPeerConnectionState?> getConnectionState() async {
+    return connectionState;
+  }
 
   Future<void> dispose();
 
