@@ -15,11 +15,13 @@ class KeyProviderOptions {
     required this.ratchetSalt,
     required this.ratchetWindowSize,
     this.uncryptedMagicBytes,
+    this.failureTolerance = -1,
   });
   bool sharedKey;
   Uint8List ratchetSalt;
   Uint8List? uncryptedMagicBytes;
   int ratchetWindowSize;
+  int failureTolerance;
   Map<String, dynamic> toJson() {
     return {
       'sharedKey': sharedKey,
@@ -27,6 +29,7 @@ class KeyProviderOptions {
       if (uncryptedMagicBytes != null)
         'uncryptedMagicBytes': uncryptedMagicBytes,
       'ratchetWindowSize': ratchetWindowSize,
+      'failureTolerance': failureTolerance,
     };
   }
 }
@@ -35,6 +38,15 @@ class KeyProviderOptions {
 abstract class KeyProvider {
   /// The unique identifier of the key provider.
   String get id;
+
+  Future<void> setSharedKey({required Uint8List key, int index = 0}) =>
+      throw UnimplementedError();
+
+  Future<Uint8List> ratchetSharedKey({int index = 0}) =>
+      throw UnimplementedError();
+
+  Future<Uint8List> exportSharedKey({int index = 0}) =>
+      throw UnimplementedError();
 
   /// Set the raw key at the given index.
   Future<bool> setKey({
@@ -48,6 +60,15 @@ abstract class KeyProvider {
     required String participantId,
     required int index,
   });
+
+  /// Export the key at the given index.
+  Future<Uint8List> exportKey({
+    required String participantId,
+    required int index,
+  });
+
+  Future<void> setSifTrailer({required Uint8List trailer}) =>
+      throw UnimplementedError();
 
   /// Dispose the key manager.
   Future<void> dispose();
