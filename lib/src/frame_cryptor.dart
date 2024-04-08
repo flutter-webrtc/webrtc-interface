@@ -16,12 +16,19 @@ class KeyProviderOptions {
     required this.ratchetWindowSize,
     this.uncryptedMagicBytes,
     this.failureTolerance = -1,
+    this.key_ring_size = 16,
+    this.discard_frame_when_cryptor_not_ready = false,
   });
   bool sharedKey;
   Uint8List ratchetSalt;
   Uint8List? uncryptedMagicBytes;
   int ratchetWindowSize;
   int failureTolerance;
+
+  /// key ring size should be between 1 and 255
+  /// default is 16
+  int key_ring_size;
+  bool discard_frame_when_cryptor_not_ready;
   Map<String, dynamic> toJson() {
     return {
       'sharedKey': sharedKey,
@@ -30,6 +37,8 @@ class KeyProviderOptions {
         'uncryptedMagicBytes': uncryptedMagicBytes,
       'ratchetWindowSize': ratchetWindowSize,
       'failureTolerance': failureTolerance,
+      'keyRingSize': key_ring_size,
+      'discardFrameWhenCryptorNotReady': discard_frame_when_cryptor_not_ready,
     };
   }
 }
@@ -82,6 +91,19 @@ enum FrameCryptorState {
   FrameCryptorStateMissingKey,
   FrameCryptorStateKeyRatcheted,
   FrameCryptorStateInternalError,
+}
+
+class FrameCryptorOptions {
+  FrameCryptorOptions({
+    this.discardUnableDecryptedFrames = false,
+  });
+
+  /// Discard frames when frame crypto is disabled.
+  /// Because of the wrong key or decoding the encrypted frame or outputting
+  /// garbled audio
+  /// when called FrameCryptor.setEnabled(false); if this parameter is true, the
+  /// frame will discarded
+  final bool discardUnableDecryptedFrames;
 }
 
 /// Frame encryption/decryption.
