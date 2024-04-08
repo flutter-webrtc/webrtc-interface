@@ -16,12 +16,19 @@ class KeyProviderOptions {
     required this.ratchetWindowSize,
     this.uncryptedMagicBytes,
     this.failureTolerance = -1,
+    this.keyRingSize = 16,
+    this.discardFrameWhenCryptorNotReady = false,
   });
   bool sharedKey;
   Uint8List ratchetSalt;
   Uint8List? uncryptedMagicBytes;
   int ratchetWindowSize;
   int failureTolerance;
+
+  /// key ring size should be between 1 and 255
+  /// default is 16
+  int keyRingSize;
+  bool discardFrameWhenCryptorNotReady;
   Map<String, dynamic> toJson() {
     return {
       'sharedKey': sharedKey,
@@ -30,6 +37,8 @@ class KeyProviderOptions {
         'uncryptedMagicBytes': uncryptedMagicBytes,
       'ratchetWindowSize': ratchetWindowSize,
       'failureTolerance': failureTolerance,
+      'keyRingSize': keyRingSize,
+      'discardFrameWhenCryptorNotReady': discardFrameWhenCryptorNotReady,
     };
   }
 }

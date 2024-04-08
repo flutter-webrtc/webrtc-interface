@@ -1,6 +1,10 @@
 # Changelog
 
 --------------------------------------------
+[1.2.0] - 2024-04-08
+
+* feat: add keyRingSize/discardFrameWhenCryptorNotReady to KeyProviderOptions.
+
 [1.1.2] - 2023-09-14
 
 * Add more frame cryptor api.
