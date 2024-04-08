@@ -93,19 +93,6 @@ enum FrameCryptorState {
   FrameCryptorStateInternalError,
 }
 
-class FrameCryptorOptions {
-  FrameCryptorOptions({
-    this.discardUnableDecryptedFrames = false,
-  });
-
-  /// Discard frames when frame crypto is disabled.
-  /// Because of the wrong key or decoding the encrypted frame or outputting
-  /// garbled audio
-  /// when called FrameCryptor.setEnabled(false); if this parameter is true, the
-  /// frame will discarded
-  final bool discardUnableDecryptedFrames;
-}
-
 /// Frame encryption/decryption.
 ///
 abstract class FrameCryptor {
