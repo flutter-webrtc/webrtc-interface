@@ -96,6 +96,10 @@ abstract class MediaStreamTrack {
     throw UnimplementedError();
   }
 
+  void selectAudioInput(String deviceId) {
+    throw UnimplementedError();
+  }
+
   Future<ByteBuffer> captureFrame() {
     throw UnimplementedError();
   }
