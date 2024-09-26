@@ -1,5 +1,7 @@
 import 'dart:typed_data';
 
+import 'package:webrtc_interface/src/enums.dart';
+
 typedef StreamTrackCallback = Function();
 
 abstract class MediaStreamTrack {
@@ -15,9 +17,9 @@ abstract class MediaStreamTrack {
   /// If the corresponding source has or had no label, returns an empty string.
   String? get label;
 
-  /// Returns the string 'audio' if this object represents an audio track
+  /// Returns the type 'audio' if this object represents an audio track
   /// or 'video' if this object represents a video track.
-  String? get kind;
+  TrackType? get kind;
 
   /// Callback for onmute event
   StreamTrackCallback? onMute;
