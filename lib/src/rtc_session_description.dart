@@ -1,8 +1,10 @@
+import 'enums.dart';
+
 class RTCSessionDescription {
   RTCSessionDescription(this.sdp, this.type);
   String? sdp;
-  String? type;
+  SdpType? type;
   dynamic toMap() {
-    return {'sdp': sdp, 'type': type};
+    return {'sdp': sdp, 'type': typeSdpTypeToString[type]};
   }
 }

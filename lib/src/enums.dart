@@ -3,6 +3,14 @@ enum RecorderAudioChannel { INPUT, OUTPUT }
 /// RTCDataChannelMessage type
 enum MessageType { text, binary }
 
+enum DataChannelProtocol { sctp , quic }
+
+enum SdpType { offer, answer }
+
+enum TrackType { audio, video }
+
+enum DeviceInfoType { videoInput, audioInput, audioOutput }
+
 enum RTCDataChannelState {
   RTCDataChannelConnecting,
   RTCDataChannelOpen,
@@ -204,3 +212,70 @@ RTCDegradationPreference degradationPreferenceforString(String? degradation) {
   }
   return RTCDegradationPreference.BALANCED;
 }
+
+SdpType? sdpTypeForString(String? type) {
+  switch (type) {
+    case 'offer':
+      return SdpType.offer;
+    case 'answer':
+      return SdpType.answer;
+    default:
+      return null;
+  }
+}
+
+final typeSdpTypeToString = <SdpType, String>{
+  SdpType.offer: 'offer',
+  SdpType.answer: 'answer',
+};
+
+TrackType? trackTypeForString(String? type) {
+  switch (type) {
+    case 'audio':
+      return TrackType.audio;
+    case 'video':
+      return TrackType.video;
+    default:
+      return null;
+  }
+}
+
+final typeTrackTypeToString = <TrackType, String>{
+  TrackType.audio: 'audio',
+  TrackType.video: 'video',
+};
+
+DeviceInfoType? deviceInfoTypeForString(String? type) {
+  switch (type) {
+    case 'audioinput':
+      return DeviceInfoType.audioInput;
+    case 'audiooutput':
+      return DeviceInfoType.audioOutput;
+    case 'videoinput':
+      return DeviceInfoType.videoInput;
+    default:
+      return null;
+  }
+}
+
+final typeDeviceInfoTypeToString = <DeviceInfoType, String>{
+  DeviceInfoType.audioInput: 'audioinput',
+  DeviceInfoType.audioOutput: 'audiooutput',
+  DeviceInfoType.videoInput: 'videoinput',
+};
+
+DataChannelProtocol? dataChannelProtocolForString(String? type) {
+  switch (type) {
+    case 'quic':
+      return DataChannelProtocol.quic;
+    case 'sctp':
+      return DataChannelProtocol.sctp;
+    default:
+      return null;
+  }
+}
+
+final typeDataChannelProtocolToString = <DataChannelProtocol, String>{
+  DataChannelProtocol.quic: 'quic',
+  DataChannelProtocol.sctp: 'sctp',
+};
