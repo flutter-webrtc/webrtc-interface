@@ -1,9 +1,9 @@
 # Changelog
 
 --------------------------------------------
-[1.2.1] - 2025-02-07
+[1.2.1+hotfix.1] - 2025-02-023
 
-* feat: expose rtc video value (#30)
+* fix: make videoValue non nullable (#30)
 * fix: make optional cname in RTCRTCPParameters nullable (#27)
 
 [1.2.0] - 2024-04-08
