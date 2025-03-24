@@ -1,6 +1,10 @@
 # Changelog
 
 --------------------------------------------
+[1.2.2+hotfix.1] - 2025-03-24
+
+* rename getBufferAmount to getBufferedAmount.
+
 [1.2.2] - 2025-03-24
 
 * add getBufferedAmount for RTCDataChannel.
