@@ -1,6 +1,6 @@
 name: webrtc_interface
 description: WebRTC Interface for Dart-Web/Flutter.
-version: 1.2.1+hotfix.1
+version: 1.2.2
 homepage: https://flutter-webrtc.org
 
 environment:

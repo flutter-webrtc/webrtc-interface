@@ -1,7 +1,11 @@
 # Changelog
 
 --------------------------------------------
-[1.2.1+hotfix.1] - 2025-02-023
+[1.2.2] - 2025-03-24
+
+* add getBufferedAmount for RTCDataChannel.
+
+[1.2.1+hotfix.1] - 2025-02-23
 
 * fix: make videoValue non nullable (#30)
 * fix: make optional cname in RTCRTCPParameters nullable (#27)
