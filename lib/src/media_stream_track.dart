@@ -25,6 +25,15 @@ abstract class MediaStreamTrack {
   /// Callback for unmute event
   StreamTrackCallback? onUnMute;
 
+  /// Callback for onChange event that is called when the track is enabled or disabled
+  StreamTrackCallback? onChange;
+
+  /// Callback for onCameraOn event that is called when the camera is enabled
+  StreamTrackCallback? onCameraOn;
+
+  /// Callback for onCameraOff event that is called when the camera is disabled
+  StreamTrackCallback? onCameraOff;
+
   /// Callback foronended event
   StreamTrackCallback? onEnded;
 
