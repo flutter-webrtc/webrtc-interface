@@ -28,5 +28,5 @@ abstract class MediaRecorder {
     int timeSlice = 1000,
   });
 
-  Future<dynamic> stop({required String albumName});
+  Future<dynamic> stop({String? albumName});
 }
