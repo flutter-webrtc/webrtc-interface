@@ -1,6 +1,10 @@
 # Changelog
 
 --------------------------------------------
+[1.2.3] - 2025-04-29
+
+* Media recording changes (#31).
+
 [1.2.2+hotfix.1] - 2025-03-24
 
 * rename getBufferAmount to getBufferedAmount.
