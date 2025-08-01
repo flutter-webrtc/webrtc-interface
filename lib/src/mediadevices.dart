@@ -1,3 +1,5 @@
+import 'package:webrtc_interface/src/enums.dart';
+
 import 'media_stream.dart';
 
 class MediaStreamConstraints {
@@ -150,7 +152,7 @@ class MediaDeviceInfo {
 
   /// Returns an enumerated value that is either 'videoinput', 'audioinput' or
   /// 'audiooutput'.
-  final String? kind;
+  final DeviceInfoType? kind;
 
   /// Returns a String that is a label describing this device
   /// (for example "External USB Webcam").
