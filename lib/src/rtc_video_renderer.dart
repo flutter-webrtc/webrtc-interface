@@ -69,4 +69,6 @@ abstract class VideoRenderer {
   set srcObject(MediaStream? stream);
 
   Future<void> dispose();
+
+  Future<void> setVolume(double value);
 }
