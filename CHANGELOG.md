@@ -1,6 +1,10 @@
 # Changelog
 
 --------------------------------------------
+[1.3.0] - 2025-09-09
+
+* Data packet cryptor interface.
+
 [1.2.3] - 2025-04-29
 
 * Media recording changes (#31).
