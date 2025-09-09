@@ -1,5 +1,6 @@
 library webrtc_interface;
 
+export 'src/data_packet_cryptor.dart';
 export 'src/enums.dart';
 export 'src/factory.dart';
 export 'src/frame_cryptor.dart';
