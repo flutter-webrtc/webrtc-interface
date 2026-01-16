@@ -184,6 +184,34 @@ enum RTCDegradationPreference {
   BALANCED,
 }
 
+/// Priority levels for RTP encoding, matching WebRTC's RTCPriorityType.
+/// Used for both `priority` and `networkPriority` in RTCRtpEncodingParameters.
+enum RTCPriorityType {
+  veryLow,
+  low,
+  medium,
+  high,
+}
+
+final typeRTCPriorityTypeString = <RTCPriorityType, String>{
+  RTCPriorityType.veryLow: 'very-low',
+  RTCPriorityType.low: 'low',
+  RTCPriorityType.medium: 'medium',
+  RTCPriorityType.high: 'high',
+};
+
+final typeStringToRTCPriorityType = <String, RTCPriorityType>{
+  'very-low': RTCPriorityType.veryLow,
+  'low': RTCPriorityType.low,
+  'medium': RTCPriorityType.medium,
+  'high': RTCPriorityType.high,
+};
+
+RTCPriorityType? rtcPriorityTypeForString(String? priority) {
+  if (priority == null) return null;
+  return typeStringToRTCPriorityType[priority];
+}
+
 final typeRTCDegradationPreferenceString = <RTCDegradationPreference, String>{
   RTCDegradationPreference.DISABLED: 'disabled',
   RTCDegradationPreference.MAINTAIN_FRAMERATE: 'maintain-framerate',

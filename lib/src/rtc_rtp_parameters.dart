@@ -60,6 +60,8 @@ class RTCRtpEncoding {
     this.scaleResolutionDownBy = 1.0,
     this.ssrc,
     this.scalabilityMode,
+    this.priority = RTCPriorityType.low,
+    this.networkPriority,
   });
 
   factory RTCRtpEncoding.fromMap(Map<dynamic, dynamic> map) => RTCRtpEncoding(
@@ -72,6 +74,8 @@ class RTCRtpEncoding {
         scaleResolutionDownBy: map['scaleResolutionDownBy'],
         ssrc: map['ssrc'],
         scalabilityMode: map['scalabilityMode'],
+        priority: rtcPriorityTypeForString(map['priority']) ?? RTCPriorityType.low,
+        networkPriority: rtcPriorityTypeForString(map['networkPriority']),
       );
 
   /// If non-null, this represents the RID that identifies this encoding layer.
@@ -106,6 +110,15 @@ class RTCRtpEncoding {
 
   String? scalabilityMode;
 
+  /// Indicates the priority of this encoding relative to other encodings.
+  /// Used to indicate the importance of the RTP stream for bandwidth allocation.
+  /// Defaults to "low".
+  RTCPriorityType priority;
+
+  /// Indicates the network priority of this encoding.
+  /// Used for DSCP marking.
+  RTCPriorityType? networkPriority;
+
   Map<String, dynamic> toMap() => {
         'active': active,
         if (rid != null) 'rid': rid,
@@ -117,6 +130,9 @@ class RTCRtpEncoding {
           'scaleResolutionDownBy': scaleResolutionDownBy,
         if (scalabilityMode != null) 'scalabilityMode': scalabilityMode,
         if (ssrc != null) 'ssrc': ssrc,
+        'priority': typeRTCPriorityTypeString[priority],
+        if (networkPriority != null)
+          'networkPriority': typeRTCPriorityTypeString[networkPriority],
       };
 }
 
