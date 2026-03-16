@@ -7,8 +7,8 @@ class RTCDataChannelInit {
   bool ordered = true;
   int maxRetransmitTime = -1;
   int maxRetransmits = -1;
-  String protocol = 'sctp'; //sctp | quic
-  String binaryType = 'text'; // "binary" || text
+  DataChannelProtocol protocol = DataChannelProtocol.sctp;
+  MessageType binaryType = MessageType.text;
   bool negotiated = false;
   int id = 0;
   Map<String, dynamic> toMap() {
@@ -18,7 +18,7 @@ class RTCDataChannelInit {
         //https://www.chromestatus.com/features/5198350873788416
         'maxPacketLifeTime': maxRetransmitTime,
       if (maxRetransmits > 0) 'maxRetransmits': maxRetransmits,
-      'protocol': protocol,
+      'protocol': typeDataChannelProtocolToString[protocol],
       'negotiated': negotiated,
       'id': id
     };
