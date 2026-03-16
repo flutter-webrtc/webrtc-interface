@@ -1,23 +1,5 @@
 import 'media_stream.dart';
 
-class MediaStreamConstraints {
-  MediaStreamConstraints({this.audio, this.video});
-
-  /// Either a bool (which indicates whether or not an audio track is requested)
-  /// or a MediaTrackConstraints object providing the constraints which must be
-  /// met by the audio track included in the returned MediaStream.
-  ///
-  /// If constraints are specified, an audio track is inherently requested.
-  dynamic audio;
-
-  /// Either a bool (which indicates whether or not a video track is requested)
-  /// or a MediaTrackConstraints object providing the constraints which must be
-  /// met by the video track included in the returned MediaStream.
-  ///
-  /// If constraints are specified, a video track is inherently requested.
-  dynamic video;
-}
-
 /// [MediaTrackSupportedConstraints] represents the list of constraints
 /// controlling the capabilities of a [MediaStreamTrack].
 class MediaTrackSupportedConstraints {
