@@ -118,4 +118,19 @@ abstract class RTCPeerConnection {
       {MediaStreamTrack track,
       RTCRtpMediaType kind,
       RTCRtpTransceiverInit init});
+
+  /// Sets the bandwidth estimation limits for this connection.
+  ///
+  /// All values are in bits per second. [startBitrate] resets the current
+  /// bandwidth estimate to that value. Each call replaces the limits set by
+  /// the previous call, so an omitted [minBitrate] or [maxBitrate] is cleared
+  /// rather than kept.
+  ///
+  /// Returns false when the values are rejected, for example a start below
+  /// the minimum, or when the connection is closed.
+  ///
+  /// Supported on iOS, macOS and Android.
+  Future<bool> setBitrate(
+          {int? minBitrate, int? startBitrate, int? maxBitrate}) =>
+      throw UnimplementedError();
 }
