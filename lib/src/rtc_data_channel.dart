@@ -17,7 +17,7 @@ class RTCDataChannelInit {
       if (maxRetransmitTime > 0)
         //https://www.chromestatus.com/features/5198350873788416
         'maxPacketLifeTime': maxRetransmitTime,
-      if (maxRetransmits > 0) 'maxRetransmits': maxRetransmits,
+      if (maxRetransmits >= 0) 'maxRetransmits': maxRetransmits,
       'protocol': protocol,
       'negotiated': negotiated,
       'id': id
