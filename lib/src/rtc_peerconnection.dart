@@ -22,10 +22,16 @@ abstract class RTCPeerConnection {
   Function(RTCIceGatheringState state)? onIceGatheringState;
   Function(RTCIceConnectionState state)? onIceConnectionState;
   Function(RTCIceCandidate candidate)? onIceCandidate;
+
+  @Deprecated('Deprecated API')
   Function(MediaStream stream)? onAddStream;
+  @Deprecated('Deprecated API')
   Function(MediaStream stream)? onRemoveStream;
+  @Deprecated('Deprecated API')
   Function(MediaStream stream, MediaStreamTrack track)? onAddTrack;
+  @Deprecated('Deprecated API')
   Function(MediaStream stream, MediaStreamTrack track)? onRemoveTrack;
+
   Function(RTCDataChannel channel)? onDataChannel;
   Function()? onRenegotiationNeeded;
 
@@ -67,8 +73,10 @@ abstract class RTCPeerConnection {
   Future<RTCSessionDescription> createAnswer(
       [Map<String, dynamic> constraints]);
 
+  @Deprecated('Deprecated API')
   Future<void> addStream(MediaStream stream);
 
+  @Deprecated('Deprecated API')
   Future<void> removeStream(MediaStream stream);
 
   Future<RTCSessionDescription?> getLocalDescription();
@@ -83,8 +91,10 @@ abstract class RTCPeerConnection {
 
   Future<List<StatsReport>> getStats([MediaStreamTrack? track]);
 
+  @Deprecated('Deprecated API')
   List<MediaStream?> getLocalStreams();
 
+  @Deprecated('Deprecated API')
   List<MediaStream?> getRemoteStreams();
 
   Future<RTCDataChannel> createDataChannel(
@@ -94,6 +104,7 @@ abstract class RTCPeerConnection {
 
   Future<void> close();
 
+  @Deprecated('Deprecated API, use RTCRtpSender.dtmf instead')
   RTCDTMFSender createDtmfSender(MediaStreamTrack track);
 
   /// Unified-Plan.
