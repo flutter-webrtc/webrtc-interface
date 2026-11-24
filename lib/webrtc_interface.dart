@@ -12,6 +12,7 @@ export 'src/navigator.dart';
 export 'src/rtc_data_channel.dart';
 export 'src/rtc_dtmf_sender.dart';
 export 'src/rtc_ice_candidate.dart';
+export 'src/rtc_ice_candidate_pair.dart';
 export 'src/rtc_peerconnection.dart';
 export 'src/rtc_rtcp_parameters.dart';
 export 'src/rtc_rtp_capabilities.dart';
