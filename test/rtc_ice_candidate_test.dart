@@ -3,14 +3,6 @@ import 'package:webrtc_interface/webrtc_interface.dart';
 
 void main() {
   group('RTCIceCandidate.usernameFragment', () {
-    test('is read from a native candidate line', () {
-      final candidate = RTCIceCandidate(
-          'candidate:1 1 udp 2122260223 192.0.2.1 50000 typ host generation 1 ufrag AbCd network-id 1',
-          '0',
-          0);
-      expect(candidate.usernameFragment, 'AbCd');
-    });
-
     test('is the given value when there is one', () {
       final candidate = RTCIceCandidate(
           'candidate:1 1 udp 2122260223 192.0.2.1 50000 typ host', '0', 0,
@@ -18,10 +10,10 @@ void main() {
       expect(candidate.usernameFragment, 'EfGh');
     });
 
-    test('is null when the line has none', () {
+    test('is null when it is not given, also when the line names one', () {
       expect(
           RTCIceCandidate(
-                  'candidate:1 1 udp 2122260223 192.0.2.1 50000 typ host',
+                  'candidate:1 1 udp 2122260223 192.0.2.1 50000 typ host generation 1 ufrag AbCd network-id 1',
                   '0',
                   0)
               .usernameFragment,
