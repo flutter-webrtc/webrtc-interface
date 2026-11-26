@@ -6,6 +6,7 @@ import 'media_stream_track.dart';
 import 'rtc_data_channel.dart';
 import 'rtc_dtmf_sender.dart';
 import 'rtc_ice_candidate.dart';
+import 'rtc_ice_candidate_pair.dart';
 import 'rtc_rtp_receiver.dart';
 import 'rtc_rtp_sender.dart';
 import 'rtc_rtp_transceiver.dart';
@@ -31,6 +32,11 @@ abstract class RTCPeerConnection {
 
   /// Unified-Plan
   Function(RTCTrackEvent event)? onTrack;
+
+  /// Called when the ICE transport selects a different candidate pair, for
+  /// example when the first pair becomes usable or after an ICE restart.
+  /// Not called on platforms that do not report it.
+  Function(RTCIceCandidatePair pair)? onSelectedCandidatePairChanged;
 
   RTCSignalingState? get signalingState;
 
