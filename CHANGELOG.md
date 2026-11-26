@@ -1,6 +1,13 @@
 # Changelog
 
 --------------------------------------------
+[1.6.0] - 2026-11-26
+
+* Add RTCPeerConnection.onSelectedCandidatePairChanged and RTCIceCandidatePair.
+* Add RTCIceCandidate.usernameFragment.
+* Fixed serialization of zero maxRetransmits for data channels.
+
+--------------------------------------------
 [1.5.1] - 2026-03-16
 
 * Fixed name for KeyDerivationAlgorithm.
